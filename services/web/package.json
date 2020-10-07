@@ -1,13 +1,16 @@
 {
-  "name": "TODO",
+  "name": "cloud-native-web-development",
   "description": "TODO",
   "version": "0.0.1",
   "scripts": {
     "postinstall": "npm install --prefix firebase",
+    "deploy:firebase": "npm run deploy --prefix firebase",
     "dev": "sapper dev",
     "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
-    "start": "node __sapper__/build"
+    "export": "sapper export ./firebase/public --legacy",
+    "start": "node __sapper__/build",
+    "deploy:clean": "rm -rf __sapper__ ./firebase/public",
+    "deploy": "npm run deploy:clean && npm run export && npm run deploy:firebase"
   },
   "dependencies": {
     "compression": "^1.7.1",
