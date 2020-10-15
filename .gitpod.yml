@@ -1,0 +1,19 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: npm install
+    command: npm run bootstrap
+
+vscode:
+  extensions:
+    - svelte.svelte-vscode@102.1.1:uSx6lY6QVmt3AsWibDEyxg==
+    - abusaidm.html-snippets@0.2.1:HrYIjYqOIABbxFB9g9kqXQ==
+
+ports:
+  - port: 5900
+    onOpen: ignore
+  - port: 6080
+    onOpen: ignore
+  - port: 10000
+    onOpen: ignore
